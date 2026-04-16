@@ -1,0 +1,1212 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>美容室 KANSHA（かんしゃ）｜尼崎市武庫之荘｜オイルストレート</title>
+  <meta name="description" content="兵庫県尼崎市武庫之荘の美容室KANSHA。潤いとツヤを与える「オイルストレート」を得意とする髙尾総一スタイリストが在籍。くせ毛・うねりでお悩みの20代後半〜50代女性に人気のサロンです。">
+
+  <!-- Schema.org 構造化データ（AI検索対策） -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "HairSalon",
+    "name": "美容室 KANSHA（かんしゃ）",
+    "image": "exterior.jpg",
+    "description": "兵庫県尼崎市武庫之荘の美容室。オイルストレートを得意とするサロン。",
+    "telephone": "06-7502-4415",
+    "address": {
+      "@type": "PostalAddress",
+      "streetAddress": "武庫之荘１－３－４",
+      "addressLocality": "尼崎市",
+      "addressRegion": "兵庫県",
+      "addressCountry": "JP"
+    },
+    "openingHoursSpecification": [
+      { "@type": "OpeningHoursSpecification", "dayOfWeek": ["Wednesday","Thursday","Friday","Saturday","Sunday"], "opens": "09:00", "closes": "18:00" }
+    ],
+    "priceRange": "¥¥",
+    "sameAs": ["https://www.instagram.com/biyoushitsu_kansha"]
+  }
+  </script>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+JP:wght@300;400;600&family=Noto+Sans+JP:wght@300;400;500&family=Cormorant+Garamond:ital,wght@0,300;0,400;1,300&display=swap" rel="stylesheet">
+
+  <style>
+    /* ===== リセット & ベース ===== */
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    :root {
+      --pink:        #D4849A;
+      --pink-light:  #F2D0D8;
+      --pink-pale:   #FBF0F3;
+      --teal:        #4BAAB8;
+      --teal-light:  #A8D8DF;
+      --teal-pale:   #EBF6F8;
+      --navy:        #1B3A6B;
+      --cream:       #FBF7F2;
+      --stone:       #E8E0D4;
+      --text:        #3A3230;
+      --text-light:  #7A6E6A;
+      --gold:        #C9A96E;
+      --white:       #FFFFFF;
+      --ff-serif:    'Noto Serif JP', serif;
+      --ff-sans:     'Noto Sans JP', sans-serif;
+      --ff-en:       'Cormorant Garamond', serif;
+    }
+    html { scroll-behavior: smooth; font-size: 16px; }
+    body { font-family: var(--ff-sans); color: var(--text); background: var(--cream); overflow-x: hidden; }
+    img { max-width: 100%; display: block; }
+    a { color: inherit; text-decoration: none; }
+
+    /* ===== ユーティリティ ===== */
+    .container { max-width: 1080px; margin: 0 auto; padding: 0 24px; }
+    .section-title { text-align: center; margin-bottom: 48px; }
+    .section-title .en { font-family: var(--ff-en); font-size: 0.85rem; letter-spacing: 0.25em; color: var(--pink); display: block; margin-bottom: 6px; }
+    .section-title .ja { font-family: var(--ff-serif); font-size: 1.6rem; font-weight: 400; color: var(--navy); display: block; line-height: 1.5; }
+    .section-title .bar { display: block; width: 40px; height: 2px; background: linear-gradient(90deg, var(--pink), var(--teal)); margin: 14px auto 0; border-radius: 2px; }
+    .btn { display: inline-block; padding: 14px 36px; border-radius: 60px; font-size: 0.88rem; letter-spacing: 0.08em; cursor: pointer; transition: all 0.3s ease; font-family: var(--ff-sans); border: none; }
+    .btn-primary { background: linear-gradient(135deg, var(--pink), #C06080); color: var(--white); }
+    .btn-primary:hover { transform: translateY(-2px); box-shadow: 0 8px 20px rgba(192,96,128,0.3); }
+    .btn-outline { background: transparent; color: var(--teal); border: 1.5px solid var(--teal); }
+    .btn-outline:hover { background: var(--teal); color: var(--white); transform: translateY(-2px); }
+    .tax-note { font-size: 0.72rem; color: var(--text-light); }
+
+    /* ===== ヘッダー ===== */
+    #header { position: fixed; top: 0; left: 0; right: 0; z-index: 1000; background: rgba(251,247,242,0.96); backdrop-filter: blur(8px); border-bottom: 1px solid rgba(212,132,154,0.15); transition: box-shadow 0.3s; }
+    #header.scrolled { box-shadow: 0 2px 20px rgba(0,0,0,0.08); }
+    .header-inner { display: flex; align-items: center; justify-content: space-between; height: 84px; }
+    .logo { display: flex; align-items: center; gap: 10px; }
+    .logo img { height: 56px; width: auto; }
+    /* ロゴ画像が読み込めない場合のフォールバック */
+    .logo-fallback { width: 44px; height: 44px; background: var(--navy); border-radius: 50%; display: flex; align-items: center; justify-content: center; color: white; font-family: var(--ff-en); font-size: 1rem; }
+    .logo-text .en { font-family: var(--ff-en); font-size: 1.75rem; letter-spacing: 0.15em; color: var(--navy); display: block; line-height: 1; }
+    .logo-text .ja { font-size: 0.90rem; color: var(--text-light); letter-spacing: 0.1em; }
+    nav { display: flex; align-items: center; gap: 32px; }
+    nav a { font-size: 0.97rem; letter-spacing: 0.06em; color: var(--text); position: relative; transition: color 0.3s; }
+    nav a::after { content: ''; position: absolute; bottom: -3px; left: 0; right: 100%; height: 1.5px; background: var(--pink); transition: right 0.3s; }
+    nav a:hover { color: var(--pink); }
+    nav a:hover::after { right: 0; }
+    .nav-reserve { background: linear-gradient(135deg, var(--pink), #C06080); color: var(--white) !important; padding: 8px 20px; border-radius: 40px; font-size: 0.8rem; }
+    .nav-reserve::after { display: none !important; }
+    .nav-reserve:hover { opacity: 0.9; transform: translateY(-1px); }
+    .hamburger { display: none; flex-direction: column; gap: 5px; cursor: pointer; padding: 4px; }
+    .hamburger span { display: block; width: 24px; height: 2px; background: var(--navy); border-radius: 2px; transition: all 0.3s; }
+
+    /* ===== ヒーロー ===== */
+    #hero { min-height: 100vh; position: relative; display: flex; align-items: center; overflow: hidden; background: linear-gradient(135deg, #FBF0F3 0%, #EBF6F8 50%, #FBF7F2 100%); }
+    .hero-circle { position: absolute; border-radius: 50%; }
+    .hero-circle-1 { width: 600px; height: 600px; top: -100px; right: -100px; background: radial-gradient(circle, rgba(212,132,154,0.15) 0%, transparent 70%); }
+    .hero-circle-2 { width: 400px; height: 400px; bottom: -80px; left: -80px; background: radial-gradient(circle, rgba(75,170,184,0.12) 0%, transparent 70%); }
+    .hero-inner { position: relative; z-index: 1; width: 100%; display: grid; grid-template-columns: 1fr 1fr; gap: 60px; align-items: center; padding-top: 70px; }
+    .hero-tag { display: inline-block; background: rgba(212,132,154,0.12); color: var(--pink); font-size: 0.78rem; letter-spacing: 0.12em; padding: 6px 18px; border-radius: 30px; margin-bottom: 20px; border: 1px solid rgba(212,132,154,0.3); }
+    .hero-title { font-family: var(--ff-serif); font-size: 2.3rem; font-weight: 400; color: var(--navy); line-height: 1.8; margin-bottom: 16px; }
+    .hero-title em { font-style: normal; color: var(--pink); }
+    .hero-subtitle { font-family: var(--ff-en); font-size: 1rem; color: var(--teal); letter-spacing: 0.2em; margin-bottom: 24px; }
+    .hero-desc { font-size: 0.9rem; line-height: 2; color: var(--text-light); margin-bottom: 36px; max-width: 420px; }
+    .hero-cta { display: flex; gap: 16px; flex-wrap: wrap; }
+    .hero-img-frame { position: relative; border-radius: 50% 50% 25% 25% / 55% 55% 18% 18%; overflow: hidden; aspect-ratio: 3/2; background: linear-gradient(135deg, var(--pink-light), var(--teal-light)); box-shadow: 0 30px 60px rgba(0,0,0,0.12); }
+    .hero-img-frame img { width: 100%; height: 100%; object-fit: cover; }
+    .img-placeholder { width: 100%; height: 100%; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 10px; color: rgba(255,255,255,0.85); font-size: 0.82rem; letter-spacing: 0.1em; }
+    .hero-badge { position: absolute; bottom: 20px; left: -20px; background: var(--white); border-radius: 16px; padding: 14px 20px; box-shadow: 0 8px 30px rgba(0,0,0,0.1); text-align: center; min-width: 130px; }
+    .hero-badge .num { font-family: var(--ff-en); font-size: 2rem; color: var(--pink); line-height: 1; display: block; }
+    .hero-badge .label { font-size: 0.7rem; color: var(--text-light); }
+
+    /* ===== お知らせ帯 ===== */
+    #news-bar { background: var(--navy); color: var(--white); padding: 12px 0; }
+    .news-bar-inner { display: flex; align-items: center; gap: 20px; }
+    .news-bar-label { background: var(--pink); font-size: 0.72rem; letter-spacing: 0.1em; padding: 4px 12px; border-radius: 3px; white-space: nowrap; }
+    .news-bar-text { font-size: 0.83rem; letter-spacing: 0.04em; }
+
+    /* ===== コンセプト ===== */
+    /* ===== KANSHAについて ===== */
+    #concept { padding: 100px 0; background: var(--white); }
+    .about-intro { max-width: 720px; margin: 0 auto 56px; text-align: center; }
+    .about-intro-lead { font-family: var(--ff-serif); font-size: 1.45rem; font-weight: 400; color: var(--navy); line-height: 1.95; }
+    .about-intro-lead em { font-style: normal; color: var(--pink); }
+    .about-blocks { display: flex; justify-content: center; gap: 28px; margin-bottom: 72px; }
+    .about-blocks .about-block { max-width: 600px; width: 100%; }
+    .about-block { border-radius: 20px; padding: 36px 32px; position: relative; overflow: hidden; }
+    .about-block-salon { background: var(--pink-pale); }
+    .about-block-reserve { background: #EAF6F8; }
+    .about-block::after { content: ''; position: absolute; bottom: -28px; right: -28px; width: 90px; height: 90px; border-radius: 50%; opacity: 0.18; }
+    .about-block-salon::after { background: var(--pink); }
+    .about-block-reserve::after { background: var(--teal); }
+    .about-block h3 { font-family: var(--ff-serif); font-size: 1rem; color: var(--navy); margin-bottom: 18px; display: flex; align-items: center; gap: 9px; letter-spacing: 0.05em; }
+    .about-block-salon h3::before { content: '✦'; color: var(--pink); font-size: 0.75rem; }
+    .about-block-reserve h3::before { content: '◎'; color: var(--teal); font-size: 0.75rem; }
+    .about-block p { font-size: 0.875rem; line-height: 2.3; color: var(--text-light); }
+
+    /* Interior Gallery */
+    .gallery-heading { text-align: center; margin-bottom: 32px; }
+    .gallery-heading span { font-family: var(--ff-serif); font-size: 1.05rem; color: var(--navy); letter-spacing: 0.15em; display: inline-block; border-bottom: 1.5px solid var(--pink-light); padding-bottom: 7px; }
+    .interior-grid { display: grid; grid-template-columns: repeat(3, 1fr); grid-template-rows: 210px 210px 210px; gap: 18px; }
+    .gi { border-radius: 14px; overflow: hidden; box-shadow: 0 8px 28px rgba(0,0,0,0.09); transition: transform 0.35s cubic-bezier(.22,.68,0,1.2), box-shadow 0.35s; background: linear-gradient(135deg,#F2D0D8 0%,#A8D8DF 100%); }
+    .gi img { width: 100%; height: 100%; object-fit: cover; display: block; }
+    .gi-1 { grid-column: 1; grid-row: 1 / 3; transform: rotate(-1.6deg); }
+    .gi-2 { grid-column: 2; grid-row: 1;    transform: rotate(1.1deg); }
+    .gi-3 { grid-column: 3; grid-row: 1 / 3; transform: rotate(-0.9deg); }
+    .gi-4 { grid-column: 2; grid-row: 2;    transform: rotate(-1.3deg); }
+    .gi-5 { grid-column: 1; grid-row: 3;    transform: rotate(1.4deg); }
+    .gi-6 { grid-column: 2 / 4; grid-row: 3; transform: rotate(-0.6deg); }
+    .gi:hover { transform: rotate(0deg) scale(1.03) !important; box-shadow: 0 16px 44px rgba(0,0,0,0.14); z-index: 2; position: relative; }
+    .gi-placeholder { width: 100%; height: 100%; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 8px; color: rgba(255,255,255,0.7); font-size: 0.72rem; letter-spacing: 0.06em; }
+
+    /* ===== 看板メニュー ===== */
+    #featured { padding: 100px 0; background: linear-gradient(160deg, var(--pink-pale) 0%, #F0F8FA 100%); }
+    .featured-card { background: var(--white); border-radius: 24px; overflow: hidden; box-shadow: 0 20px 60px rgba(0,0,0,0.08); display: flex; flex-direction: column; }
+    /* ビフォーアフタースライダー */
+    .ba-slider { width: 100%; background: #1a1a2e; position: relative; overflow: hidden; }
+    .ba-track { display: flex; transition: transform 0.5s ease; }
+    .ba-pair { min-width: 100%; display: grid; grid-template-columns: 1fr 1fr; }
+    .ba-photo { position: relative; aspect-ratio: 3/4; overflow: hidden; background: linear-gradient(135deg, #EDB8C8, #9FD4DE); }
+    .ba-photo img { width: 100%; height: 100%; object-fit: cover; display: block; }
+    .ba-photo-label { position: absolute; top: 12px; left: 12px; background: rgba(0,0,0,0.5); color: #fff; font-size: 0.72rem; letter-spacing: 0.12em; padding: 4px 12px; border-radius: 20px; }
+    .ba-photo-placeholder { width: 100%; height: 100%; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 8px; color: rgba(255,255,255,0.7); font-size: 0.78rem; letter-spacing: 0.08em; }
+    .ba-photo-placeholder span:first-child { font-size: 2rem; }
+    .ba-nav { position: absolute; top: 50%; transform: translateY(-50%); background: rgba(255,255,255,0.85); border: none; border-radius: 50%; width: 40px; height: 40px; font-size: 1.1rem; cursor: pointer; display: flex; align-items: center; justify-content: center; box-shadow: 0 2px 10px rgba(0,0,0,0.2); transition: background 0.2s; z-index: 10; }
+    .ba-nav:hover { background: #fff; }
+    .ba-prev { left: 12px; }
+    .ba-next { right: 12px; }
+    .ba-dots { display: flex; justify-content: center; gap: 8px; padding: 12px 0; background: #1a1a2e; }
+    .ba-dot { width: 8px; height: 8px; border-radius: 50%; background: rgba(255,255,255,0.3); border: none; cursor: pointer; transition: background 0.3s; padding: 0; }
+    .ba-dot.active { background: var(--pink); }
+    .ba-counter { position: absolute; bottom: 16px; right: 16px; background: rgba(0,0,0,0.45); color: #fff; font-size: 0.72rem; padding: 3px 10px; border-radius: 20px; letter-spacing: 0.08em; }
+    .before-after-badge { display: none; }
+    .featured-card-body { padding: 44px 56px; display: flex; flex-direction: column; }
+    .featured-top-row { display: flex; align-items: flex-start; gap: 48px; margin-bottom: 24px; }
+    .featured-top-left { flex: 0 0 auto; }
+    .featured-top-right { flex: 1; }
+    .featured-badge { display: inline-block; background: linear-gradient(135deg, var(--pink), #C06080); color: var(--white); font-size: 0.72rem; letter-spacing: 0.15em; padding: 6px 16px; border-radius: 30px; margin-bottom: 12px; }
+    .featured-stylist { display: inline-block; background: var(--navy); color: var(--white); font-size: 0.7rem; letter-spacing: 0.1em; padding: 4px 14px; border-radius: 20px; margin-bottom: 16px; }
+    .featured-title { font-family: var(--ff-serif); font-size: 2.2rem; font-weight: 400; color: var(--navy); line-height: 1.4; margin-bottom: 0; }
+    .featured-subtitle { display: none; }
+    .featured-recommend-label { font-size: 0.78rem; font-weight: 700; color: var(--white); background: var(--pink); display: inline-block; padding: 4px 14px; border-radius: 20px; margin: 0 0 12px; letter-spacing: 0.08em; }
+    .featured-desc { font-size: 0.9rem; line-height: 2.0; color: var(--text-light); margin-bottom: 0; }
+    .featured-points { display: grid; grid-template-columns: 1fr 1fr; gap: 8px 32px; margin-bottom: 28px; }
+    .featured-point { display: flex; align-items: flex-start; gap: 10px; font-size: 0.84rem; color: var(--text); line-height: 1.6; }
+    .featured-point::before { content: ''; width: 7px; height: 7px; border-radius: 50%; background: linear-gradient(135deg, var(--pink), var(--teal)); flex-shrink: 0; margin-top: 7px; }
+    .featured-price { margin-bottom: 28px; }
+    .featured-price .label { font-size: 0.75rem; color: var(--text-light); margin-bottom: 4px; }
+    .featured-price .amount { font-family: var(--ff-en); font-size: 2rem; color: var(--pink); }
+    .featured-price .unit { font-family: var(--ff-en); font-size: 2rem; color: var(--pink); }
+    .featured-price .price-sep { font-size: 1.1rem; color: var(--pink); vertical-align: middle; margin: 0 2px; }
+    .featured-price .tax { display: block; font-size: 0.72rem; color: var(--text-light); margin-top: 2px; }
+
+    /* ===== メニュー一覧 ===== */
+    #menu { padding: 100px 0; background: var(--white); }
+    .menu-tax-note { text-align: center; font-size: 0.8rem; color: var(--text-light); margin-bottom: 36px; background: var(--cream); display: inline-block; padding: 8px 24px; border-radius: 30px; }
+    .menu-tax-wrap { text-align: center; margin-bottom: -12px; margin-top: -12px; }
+    .menu-section { margin-bottom: 60px; }
+    .menu-section-title { font-family: var(--ff-serif); font-size: 1.1rem; color: var(--navy); margin-bottom: 20px; padding-bottom: 10px; border-bottom: 2px solid var(--stone); display: flex; align-items: center; gap: 12px; }
+    .menu-section-title .en-small { font-family: var(--ff-en); font-size: 0.78rem; color: var(--pink); letter-spacing: 0.15em; }
+    .menu-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; }
+    .menu-card { border: 1px solid var(--stone); border-radius: 16px; overflow: hidden; transition: transform 0.3s, box-shadow 0.3s; background: var(--white); }
+    .menu-card:hover { transform: translateY(-5px); box-shadow: 0 16px 36px rgba(0,0,0,0.08); }
+    .menu-card-img { aspect-ratio: 4/3; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 8px; font-size: 0.75rem; letter-spacing: 0.08em; }
+    /* 各メニューの画像グラデーション */
+    .img-cut     { background: linear-gradient(135deg, #F5DDD5 0%, #E8B4A8 100%); }
+    .img-color   { background: linear-gradient(135deg, #F0C080 0%, #D4789A 100%); }
+    .img-perm    { background: linear-gradient(135deg, #DDD0E8 0%, #C4A8D4 100%); }
+    .img-digital { background: linear-gradient(135deg, #C8D8F0 0%, #A0B8E0 100%); }
+    .img-treat   { background: linear-gradient(135deg, #A8D8DF 0%, #6DBAC8 100%); }
+    .img-spa     { background: linear-gradient(135deg, #1B3A6B 0%, #2A5098 100%); }
+    .img-kairyo  { background: linear-gradient(135deg, #E8D0B0 0%, #D4A870 100%); }
+    .img-blow    { background: linear-gradient(135deg, #F0E0E8 0%, #D8B0C0 100%); }
+    .img-set     { background: linear-gradient(135deg, #D8E8D0 0%, #A8C8A0 100%); }
+    .menu-card-img span { color: rgba(255,255,255,0.85); }
+    .menu-card-body { padding: 18px 20px; }
+    .menu-card-cat { font-size: 0.7rem; letter-spacing: 0.15em; color: var(--teal); margin-bottom: 6px; }
+    .menu-card-name { font-family: var(--ff-serif); font-size: 1rem; color: var(--navy); margin-bottom: 6px; line-height: 1.5; }
+    .menu-card-desc { font-size: 0.77rem; line-height: 1.8; color: var(--text-light); margin-bottom: 10px; }
+    .menu-card-price { font-size: 0.95rem; color: var(--pink); font-weight: 500; }
+    .menu-card-price .tax { font-size: 0.7rem; color: var(--text-light); font-weight: 400; }
+    .menu-card-sub-price { font-size: 0.78rem; color: var(--text-light); margin-top: 4px; line-height: 1.6; }
+    .menu-card-note { font-size: 0.72rem; color: var(--teal); background: var(--teal-pale); padding: 4px 10px; border-radius: 4px; margin-top: 8px; line-height: 1.5; display: inline-block; }
+    .menu-card-stylist { display: inline-block; background: var(--navy); color: var(--white); font-size: 0.68rem; letter-spacing: 0.05em; padding: 2px 10px; border-radius: 10px; margin-top: 6px; }
+    .menu-card.featured-item { border-color: var(--pink); border-width: 2px; }
+    .menu-card.featured-item .menu-card-body { background: linear-gradient(180deg, #FDF5F7 0%, white 60%); }
+
+    /* 料金表（カットなど） */
+    .price-table { width: 100%; border-collapse: collapse; margin-top: 6px; }
+    .price-table td { font-size: 0.8rem; padding: 4px 0; color: var(--text); }
+    .price-table td:last-child { text-align: right; color: var(--pink); font-weight: 500; }
+
+
+    /* ===== ブログ ===== */
+    #blog { padding: 80px 0; background: var(--white); }
+    .blog-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; margin-bottom: 36px; }
+    .blog-card { border-radius: 14px; overflow: hidden; transition: transform 0.3s; }
+    .blog-card:hover { transform: translateY(-4px); }
+    .blog-card-img { aspect-ratio: 16/9; display: flex; align-items: center; justify-content: center; font-size: 1.8rem; }
+    .blog-card-body { padding: 18px; border: 1px solid var(--stone); border-top: none; border-radius: 0 0 14px 14px; }
+    .blog-card-date { font-size: 0.72rem; color: var(--teal); letter-spacing: 0.1em; margin-bottom: 8px; }
+    .blog-card-title { font-size: 0.9rem; font-weight: 500; color: var(--navy); line-height: 1.6; margin-bottom: 8px; }
+    .blog-card-tag { font-size: 0.7rem; background: var(--pink-pale); color: var(--pink); padding: 3px 10px; border-radius: 20px; display: inline-block; }
+    .blog-center { text-align: center; }
+
+    /* ===== SNS ===== */
+    #sns { padding: 80px 0; background: linear-gradient(135deg, var(--navy) 0%, #2A5098 100%); color: var(--white); }
+    .sns-inner { text-align: center; }
+    .sns-title { font-family: var(--ff-en); font-size: 2.2rem; letter-spacing: 0.15em; margin-bottom: 6px; }
+    .sns-handle { font-size: 0.9rem; color: rgba(255,255,255,0.7); letter-spacing: 0.08em; margin-bottom: 8px; }
+    .sns-sub { font-size: 0.83rem; opacity: 0.65; letter-spacing: 0.08em; margin-bottom: 36px; }
+    .sns-grid { display: grid; grid-template-columns: repeat(5, 1fr); gap: 8px; margin-bottom: 32px; }
+    .sns-img { aspect-ratio: 1; border-radius: 8px; background: rgba(255,255,255,0.1); overflow: hidden; opacity: 0.9; transition: opacity 0.3s; }
+    .sns-img img { width: 100%; height: 100%; object-fit: cover; display: block; }
+    .sns-img:hover { opacity: 1; }
+    .sns-links { display: flex; justify-content: center; gap: 14px; flex-wrap: wrap; }
+    .sns-link { display: flex; align-items: center; gap: 8px; background: rgba(255,255,255,0.12); color: var(--white); padding: 10px 24px; border-radius: 40px; font-size: 0.85rem; letter-spacing: 0.04em; transition: background 0.3s; }
+    .sns-link:hover { background: rgba(255,255,255,0.22); }
+
+    /* ===== FAQ ===== */
+    #faq { padding: 80px 0; background: var(--cream); }
+    .faq-list { display: flex; flex-direction: column; gap: 14px; max-width: 740px; margin: 0 auto; }
+    .faq-item { background: var(--white); border-radius: 12px; overflow: hidden; box-shadow: 0 2px 10px rgba(0,0,0,0.04); }
+    .faq-q { width: 100%; text-align: left; background: none; border: none; padding: 20px 24px; display: flex; align-items: flex-start; gap: 14px; cursor: pointer; font-family: var(--ff-sans); font-size: 0.9rem; color: var(--navy); font-weight: 500; transition: background 0.2s; line-height: 1.6; }
+    .faq-q:hover { background: var(--pink-pale); }
+    .faq-q-icon { width: 28px; height: 28px; background: linear-gradient(135deg, var(--pink), #C06080); border-radius: 50%; color: var(--white); display: flex; align-items: center; justify-content: center; font-size: 0.75rem; flex-shrink: 0; margin-top: 1px; }
+    .faq-a { padding: 0 24px 20px 66px; font-size: 0.85rem; line-height: 2; color: var(--text-light); display: none; }
+    .faq-a.open { display: block; }
+
+    /* ===== アクセス ===== */
+    #access { padding: 100px 0; background: var(--white); }
+    .access-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 60px; align-items: start; }
+    .access-name { font-family: var(--ff-serif); font-size: 1.3rem; color: var(--navy); margin-bottom: 24px; line-height: 1.6; }
+    .access-list { display: flex; flex-direction: column; gap: 14px; margin-bottom: 32px; }
+    .access-item { display: flex; gap: 14px; align-items: flex-start; }
+    .access-item-label { font-size: 0.73rem; letter-spacing: 0.06em; color: var(--white); background: var(--navy); padding: 4px 10px; border-radius: 4px; flex-shrink: 0; white-space: nowrap; }
+    .access-item-val { font-size: 0.87rem; line-height: 1.8; color: var(--text); }
+    .access-item-val a { color: var(--teal); text-decoration: underline; }
+
+    /* スタイリストスケジュール */
+    .stylist-schedule { margin-bottom: 32px; }
+    .stylist-schedule h3 { font-size: 0.85rem; color: var(--text-light); letter-spacing: 0.08em; margin-bottom: 16px; }
+    .stylist-cards { display: flex; flex-direction: column; gap: 16px; }
+    .stylist-card { background: var(--cream); border-radius: 12px; padding: 18px 20px; }
+    .stylist-card-header { display: flex; align-items: center; justify-content: space-between; margin-bottom: 12px; }
+    .stylist-name { font-family: var(--ff-serif); font-size: 1rem; color: var(--navy); }
+    .stylist-label { font-size: 0.68rem; background: var(--pink-light); color: #A04060; padding: 3px 10px; border-radius: 10px; }
+    .week-grid { display: grid; grid-template-columns: repeat(7, 1fr); gap: 4px; }
+    .day-cell { text-align: center; }
+    .day-name { font-size: 0.65rem; color: var(--text-light); margin-bottom: 3px; }
+    .day-status { font-size: 0.72rem; font-weight: 500; padding: 4px 0; border-radius: 5px; }
+    .day-status.open { background: linear-gradient(135deg, #B0DDE5, #A0D4DC); color: #0D6B78; font-weight: 700; }
+    .day-status.closed { background: var(--stone); color: var(--text-light); }
+
+    /* 予約方法 */
+    .reserve-methods { display: flex; flex-direction: column; gap: 14px; }
+    .reserve-method { background: var(--cream); border-radius: 12px; padding: 18px 20px; }
+    .reserve-method-name { font-size: 0.88rem; font-weight: 500; color: var(--navy); margin-bottom: 8px; }
+    .reserve-method-btns { display: flex; gap: 8px; flex-wrap: wrap; }
+    .rm-btn { display: inline-flex; align-items: center; gap: 6px; padding: 8px 16px; border-radius: 30px; font-size: 0.8rem; letter-spacing: 0.04em; transition: all 0.2s; }
+    .rm-btn-tel { background: var(--navy); color: var(--white); }
+    .rm-btn-tel:hover { background: #2A5098; }
+    .tel-pc-msg { display: none; margin-top: 8px; font-size: 0.82rem; color: var(--navy); background: #EEF4FF; border: 1px solid #C0D0EE; border-radius: 8px; padding: 8px 14px; letter-spacing: 0.04em; }
+    .rm-btn-insta { background: linear-gradient(135deg, #F58529, #DD2A7B, #8134AF); color: var(--white); }
+    .rm-btn-hot { background: #FF0033; color: var(--white); }
+    .rm-btn-hot:hover { opacity: 0.88; }
+
+    .access-map { border-radius: 16px; overflow: hidden; box-shadow: 0 10px 30px rgba(0,0,0,0.08); }
+    .access-map iframe { display: block; width: 100%; height: 360px; border: 0; }
+
+    /* ===== 予約CTA ===== */
+    #reserve { padding: 80px 0; background: linear-gradient(135deg, var(--pink-pale), var(--teal-pale)); text-align: center; }
+    .reserve-title { font-family: var(--ff-serif); font-size: 1.7rem; font-weight: 400; color: var(--navy); margin-bottom: 10px; }
+    .reserve-sub { font-size: 0.87rem; color: var(--text-light); margin-bottom: 40px; letter-spacing: 0.04em; line-height: 1.9; }
+    .reserve-grid { display: flex; justify-content: center; gap: 24px; max-width: 680px; margin: 0 auto; }
+    .reserve-grid .reserve-card { max-width: 400px; width: 100%; }
+    .reserve-card { background: var(--white); border-radius: 16px; padding: 28px 24px; box-shadow: 0 6px 24px rgba(0,0,0,0.06); }
+    .reserve-card-name { font-family: var(--ff-serif); font-size: 1.05rem; color: var(--navy); margin-bottom: 6px; }
+    .reserve-card-menu { font-size: 0.75rem; color: var(--text-light); margin-bottom: 18px; line-height: 1.6; }
+    .reserve-card-btns { display: flex; flex-direction: column; gap: 8px; }
+    .rc-btn { display: flex; align-items: center; justify-content: center; gap: 8px; padding: 11px 16px; border-radius: 30px; font-size: 0.83rem; letter-spacing: 0.04em; transition: all 0.25s; }
+    .rc-btn-tel { background: var(--navy); color: var(--white); }
+    .rc-btn-tel:hover { background: #2A5098; transform: translateY(-2px); }
+    .rc-btn-insta { background: linear-gradient(135deg, #F58529, #DD2A7B, #8134AF); color: var(--white); }
+    .rc-btn-insta:hover { opacity: 0.9; transform: translateY(-2px); }
+    .rc-btn-hot { background: #FF0033; color: var(--white); }
+    .rc-btn-hot:hover { opacity: 0.88; transform: translateY(-2px); }
+
+    /* ===== フッター ===== */
+    #footer { background: var(--navy); color: rgba(255,255,255,0.65); padding: 56px 0 28px; }
+    .footer-inner { display: grid; grid-template-columns: 2fr 1fr 1fr; gap: 48px; margin-bottom: 40px; }
+    .footer-logo { display: flex; align-items: center; gap: 10px; margin-bottom: 16px; }
+    .footer-logo img { height: 38px; }
+    .footer-logo .logo-text .en { color: var(--white); }
+    .footer-logo .logo-text .ja { color: rgba(255,255,255,0.45); }
+    .footer-brand p { font-size: 0.8rem; line-height: 2; }
+    .footer-col h4 { font-size: 0.75rem; letter-spacing: 0.15em; color: var(--white); margin-bottom: 14px; }
+    .footer-col ul { list-style: none; display: flex; flex-direction: column; gap: 10px; }
+    .footer-col ul li a { font-size: 0.8rem; transition: color 0.3s; }
+    .footer-col ul li a:hover { color: var(--pink-light); }
+    .footer-bottom { border-top: 1px solid rgba(255,255,255,0.1); padding-top: 22px; display: flex; justify-content: space-between; align-items: center; }
+    .footer-bottom p { font-size: 0.74rem; }
+
+    /* ===== フロートボタン ===== */
+    .float-btn { position: fixed; bottom: 24px; right: 24px; z-index: 999; display: flex; flex-direction: column; gap: 10px; }
+    .float-item { width: 52px; height: 52px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 1.3rem; box-shadow: 0 4px 16px rgba(0,0,0,0.18); transition: transform 0.3s; cursor: pointer; }
+    .float-item:hover { transform: scale(1.1); }
+    .float-insta { background: linear-gradient(135deg, #F58529, #DD2A7B, #8134AF); }
+    .float-tel { background: var(--navy); }
+
+    /* ===== モバイルナビ ===== */
+    .mobile-nav { display: none; position: fixed; top: 70px; left: 0; right: 0; background: var(--cream); padding: 20px 24px; flex-direction: column; gap: 0; border-bottom: 1px solid var(--stone); z-index: 999; }
+    .mobile-nav.open { display: flex; }
+    .mobile-nav a { font-size: 0.95rem; letter-spacing: 0.06em; color: var(--text); padding: 14px 0; border-bottom: 1px solid var(--stone); }
+    .mobile-nav .m-reserve { margin-top: 16px; background: linear-gradient(135deg, var(--pink), #C06080); color: var(--white) !important; text-align: center; border-radius: 30px; padding: 13px; border-bottom: none; }
+
+    /* ===== スクロールアニメ ===== */
+    .fade-in { opacity: 0; transform: translateY(20px); transition: opacity 0.7s ease, transform 0.7s ease; }
+    .fade-in.visible { opacity: 1; transform: translateY(0); }
+
+    /* ===== レスポンシブ ===== */
+    @media (max-width: 900px) {
+      .header-inner { height: 68px; }
+      .logo img { height: 44px; }
+      .logo-text .en { font-size: 1.35rem; }
+      .logo-text .ja { font-size: 0.65rem; }
+      .hero-inner { grid-template-columns: 1fr; gap: 40px; }
+      .hero-visual { order: -1; max-width: 340px; margin: 0 auto; width: 100%; }
+      .hero-title { font-size: 1.9rem; }
+      #hero { min-height: auto; padding: 100px 0 60px; }
+      .about-blocks { grid-template-columns: 1fr; }
+      .interior-grid { grid-template-columns: repeat(2, 1fr); grid-template-rows: 160px 160px 160px 160px; }
+      .gi-1 { grid-column: 1; grid-row: 1 / 3; transform: none; }
+      .gi-2 { grid-column: 2; grid-row: 1; transform: none; }
+      .gi-3 { grid-column: 2; grid-row: 2 / 4; transform: none; }
+      .gi-4 { grid-column: 1; grid-row: 3; transform: none; }
+      .gi-5 { grid-column: 1; grid-row: 4; transform: none; }
+      .gi-6 { grid-column: 2; grid-row: 4; transform: none; }
+      .gi:hover { transform: none !important; }
+      .featured-card-img { height: 260px; }
+      .featured-card-body { padding: 28px 24px; }
+      .featured-top-row { flex-direction: column; gap: 16px; }
+      .featured-title { font-size: 1.7rem; }
+      .featured-points { grid-template-columns: 1fr; }
+      .menu-grid { grid-template-columns: repeat(2, 1fr); }
+
+      .blog-grid { grid-template-columns: repeat(2, 1fr); }
+      .sns-grid { grid-template-columns: repeat(4, 1fr); }
+      .access-grid { grid-template-columns: 1fr; }
+      .reserve-grid { grid-template-columns: 1fr; max-width: 400px; }
+      .footer-inner { grid-template-columns: 1fr; gap: 28px; }
+      nav { display: none; }
+      .hamburger { display: flex; }
+    }
+    @media (max-width: 600px) {
+      .menu-grid { grid-template-columns: 1fr; }
+      .blog-grid { grid-template-columns: 1fr; }
+      .sns-grid { grid-template-columns: repeat(3, 1fr); }
+      .section-title .ja { font-size: 1.3rem; }
+      .hero-title { font-size: 1.65rem; }
+      .hero-cta { flex-direction: column; }
+      .footer-bottom { flex-direction: column; gap: 8px; text-align: center; }
+      .week-grid { gap: 2px; }
+      .day-name { font-size: 0.6rem; }
+      .day-status { font-size: 0.65rem; }
+    }
+  </style>
+</head>
+<body>
+
+<!-- ===== ヘッダー ===== -->
+<header id="header">
+  <div class="container">
+    <div class="header-inner">
+      <a href="#" class="logo">
+        <!--
+          logo.png を kansha-salon フォルダに入れてください。
+          入れた後、下の img タグのコメントを外してください。
+        -->
+        <img src="logo.png" alt="美容室かんしゃ ロゴ" height="48"
+             onerror="this.style.display='none';this.nextElementSibling.style.display='flex';">
+        <div class="logo-fallback" style="display:none;">K</div>
+        <div class="logo-text">
+          <span class="en">KANSHA</span>
+          <span class="ja">美容室かんしゃ</span>
+        </div>
+      </a>
+      <nav>
+        <a href="#concept">KANSHAについて</a>
+        <a href="#featured">潤艶オイルストレート</a>
+        <a href="#menu">メニュー</a>
+        <a href="#blog">ブログ</a>
+        <a href="#access">アクセス</a>
+      </nav>
+      <div class="hamburger" onclick="toggleNav()">
+        <span></span><span></span><span></span>
+      </div>
+    </div>
+  </div>
+</header>
+
+<div class="mobile-nav" id="mobileNav">
+  <a href="#concept" onclick="toggleNav()">KANSHAについて</a>
+  <a href="#featured" onclick="toggleNav()">オイルストレート</a>
+  <a href="#menu" onclick="toggleNav()">メニュー・料金</a>
+
+  <a href="#blog" onclick="toggleNav()">ブログ</a>
+  <a href="#access" onclick="toggleNav()">アクセス</a>
+</div>
+
+<!-- ===== ヒーロー ===== -->
+<section id="hero">
+  <div class="hero-circle hero-circle-1"></div>
+  <div class="hero-circle hero-circle-2"></div>
+  <div class="container">
+    <div class="hero-inner">
+      <div class="hero-content fade-in">
+        <span class="hero-tag">✦ 兵庫県尼崎市武庫之荘</span>
+        <h1 class="hero-title">
+          胸いっぱいの<em>愛</em>と<em>情熱</em>を<br>あなたへ
+        </h1>
+        <p class="hero-desc">
+          素敵なヘアスタイルは、あなたの心を躍らせる<br>
+          鏡の前であなたの心を強くする<br>
+          あなたがより良い人生を創っていくきっかけに<br>
+          そういう存在でKANSHAはありたい
+        </p>
+        <div class="hero-cta">
+          <a href="#reserve" class="btn btn-primary">ご予約・お問い合わせ</a>
+        </div>
+      </div>
+      <div class="hero-visual fade-in" style="position:relative;">
+        <div class="hero-img-frame">
+          <img src="exterior.jpg" alt="美容室KANSHAの外観" style="width:100%;height:100%;object-fit:cover;">
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== お知らせ帯 ===== -->
+<div id="news-bar">
+  <div class="container">
+    <div class="news-bar-inner">
+      <span class="news-bar-label" id="news-bar-label">NEWS</span>
+      <p class="news-bar-text" id="news-bar-text"></p>
+    </div>
+  </div>
+</div>
+
+<!-- ===== KANSHAについて ===== -->
+<section id="concept">
+  <div class="container">
+    <div class="section-title fade-in">
+      <span class="en">About Us</span>
+      <span class="ja">KANSHAについて</span>
+      <span class="bar"></span>
+    </div>
+
+    <!-- テキストブロック -->
+    <div class="about-blocks fade-in">
+      <div class="about-block about-block-reserve">
+        <h3>完全ご予約制のプライベートサロン</h3>
+        <p>
+          かんしゃでは、お客様との時間を大切にするため、ご予約時間にゆとりを持ち、重ねてのご予約はお取りしない様にしております。そのため１日に対応できるお客様に限りがございますので「ご予約制」を実施しております。
+        </p>
+        <p style="margin-top:12px;">
+          ご予約された時間はお客様お一人だけの空間。周りの目を気にせず何なりとご相談下さい。
+        </p>
+      </div>
+    </div>
+
+    <!-- 内装フォトギャラリー -->
+    <div class="interior-gallery fade-in">
+      <div class="gallery-heading"><span>— サロンギャラリー —</span></div>
+      <div class="interior-grid">
+        <!-- interior01.jpg〜interior06.jpg をフォルダに入れると自動表示 -->
+        <div class="gi gi-1">
+          <img src="interior01.jpg" alt="店内の様子"
+               onerror="this.style.display='none';this.parentElement.innerHTML='<div class=\'gi-placeholder\'>interior01.jpg</div>';">
+        </div>
+        <div class="gi gi-2">
+          <img src="interior02.jpg" alt="店内の様子"
+               onerror="this.style.display='none';this.parentElement.innerHTML='<div class=\'gi-placeholder\'>interior02.jpg</div>';">
+        </div>
+        <div class="gi gi-3">
+          <img src="interior03.jpg" alt="店内の様子"
+               onerror="this.style.display='none';this.parentElement.innerHTML='<div class=\'gi-placeholder\'>interior03.jpg</div>';">
+        </div>
+        <div class="gi gi-4">
+          <img src="interior04.jpg" alt="店内の様子"
+               onerror="this.style.display='none';this.parentElement.innerHTML='<div class=\'gi-placeholder\'>interior04.jpg</div>';">
+        </div>
+        <div class="gi gi-5">
+          <img src="interior05.jpg" alt="店内の様子"
+               onerror="this.style.display='none';this.parentElement.innerHTML='<div class=\'gi-placeholder\'>interior05.jpg</div>';">
+        </div>
+        <div class="gi gi-6">
+          <img src="interior06.jpg" alt="店内の様子"
+               onerror="this.style.display='none';this.parentElement.innerHTML='<div class=\'gi-placeholder\'>interior06.jpg</div>';">
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== 看板メニュー ===== -->
+<section id="featured">
+  <div class="container">
+    <div class="section-title fade-in">
+      <span class="en">Signature Menu</span>
+      <span class="ja">看板メニュー</span>
+      <span class="bar"></span>
+    </div>
+    <div class="featured-card fade-in">
+      <!-- ビフォーアフタースライダー -->
+      <div class="ba-slider">
+        <div class="ba-track" id="baTrack">
+          <!-- ペア1 -->
+          <div class="ba-pair">
+            <div class="ba-photo">
+              <img src="before01.jpg" alt="オイルストレート before①"
+                   onerror="this.style.display='none';this.nextElementSibling.style.display='flex';">
+              <div class="ba-photo-placeholder" style="display:none;"><span>📷</span><span>before01.jpg</span></div>
+              <span class="ba-photo-label">BEFORE</span>
+            </div>
+            <div class="ba-photo">
+              <img src="after01.jpg" alt="オイルストレート after①"
+                   onerror="this.style.display='none';this.nextElementSibling.style.display='flex';">
+              <div class="ba-photo-placeholder" style="display:none;"><span>✨</span><span>after01.jpg</span></div>
+              <span class="ba-photo-label">AFTER</span>
+            </div>
+          </div>
+          <!-- ペア2 -->
+          <div class="ba-pair">
+            <div class="ba-photo">
+              <img src="before02.jpg" alt="オイルストレート before②"
+                   onerror="this.style.display='none';this.nextElementSibling.style.display='flex';">
+              <div class="ba-photo-placeholder" style="display:none;"><span>📷</span><span>before02.jpg</span></div>
+              <span class="ba-photo-label">BEFORE</span>
+            </div>
+            <div class="ba-photo">
+              <img src="after02.jpg" alt="オイルストレート after②"
+                   onerror="this.style.display='none';this.nextElementSibling.style.display='flex';">
+              <div class="ba-photo-placeholder" style="display:none;"><span>✨</span><span>after02.jpg</span></div>
+              <span class="ba-photo-label">AFTER</span>
+            </div>
+          </div>
+          <!-- ペア3 -->
+          <div class="ba-pair">
+            <div class="ba-photo">
+              <img src="before03.jpg" alt="オイルストレート before③"
+                   onerror="this.style.display='none';this.nextElementSibling.style.display='flex';">
+              <div class="ba-photo-placeholder" style="display:none;"><span>📷</span><span>before03.jpg</span></div>
+              <span class="ba-photo-label">BEFORE</span>
+            </div>
+            <div class="ba-photo">
+              <img src="after03.jpg" alt="オイルストレート after③"
+                   onerror="this.style.display='none';this.nextElementSibling.style.display='flex';">
+              <div class="ba-photo-placeholder" style="display:none;"><span>✨</span><span>after03.jpg</span></div>
+              <span class="ba-photo-label">AFTER</span>
+            </div>
+          </div>
+          <!-- ペア4 -->
+          <div class="ba-pair">
+            <div class="ba-photo">
+              <img src="before04.jpg" alt="オイルストレート before④"
+                   onerror="this.style.display='none';this.nextElementSibling.style.display='flex';">
+              <div class="ba-photo-placeholder" style="display:none;"><span>📷</span><span>before04.jpg</span></div>
+              <span class="ba-photo-label">BEFORE</span>
+            </div>
+            <div class="ba-photo">
+              <img src="after04.jpg" alt="オイルストレート after④"
+                   onerror="this.style.display='none';this.nextElementSibling.style.display='flex';">
+              <div class="ba-photo-placeholder" style="display:none;"><span>✨</span><span>after04.jpg</span></div>
+              <span class="ba-photo-label">AFTER</span>
+            </div>
+          </div>
+          <!-- ペア5 -->
+          <div class="ba-pair">
+            <div class="ba-photo">
+              <img src="before05.jpg" alt="オイルストレート before⑤"
+                   onerror="this.style.display='none';this.nextElementSibling.style.display='flex';">
+              <div class="ba-photo-placeholder" style="display:none;"><span>📷</span><span>before05.jpg</span></div>
+              <span class="ba-photo-label">BEFORE</span>
+            </div>
+            <div class="ba-photo">
+              <img src="after05.jpg" alt="オイルストレート after⑤"
+                   onerror="this.style.display='none';this.nextElementSibling.style.display='flex';">
+              <div class="ba-photo-placeholder" style="display:none;"><span>✨</span><span>after05.jpg</span></div>
+              <span class="ba-photo-label">AFTER</span>
+            </div>
+          </div>
+        </div>
+        <button class="ba-nav ba-prev" onclick="baMove(-1)">&#8249;</button>
+        <button class="ba-nav ba-next" onclick="baMove(1)">&#8250;</button>
+        <span class="ba-counter" id="baCounter">1 / 5</span>
+      </div>
+      <div class="ba-dots" id="baDots">
+        <button class="ba-dot active" onclick="baGo(0)"></button>
+        <button class="ba-dot" onclick="baGo(1)"></button>
+        <button class="ba-dot" onclick="baGo(2)"></button>
+        <button class="ba-dot" onclick="baGo(3)"></button>
+        <button class="ba-dot" onclick="baGo(4)"></button>
+      </div>
+      <div class="featured-card-body">
+        <div class="featured-top-row">
+          <div class="featured-top-left">
+            <span class="featured-badge">★ KANSHAイチ押しメニュー</span>
+            <h2 class="featured-title">オイルストレート</h2>
+          </div>
+          <div class="featured-top-right">
+            <p class="featured-desc">
+              潤い感のあるツヤ、しなやかさ、ツルッツルの手触り。<br>
+              その持続力がすごい！<br>
+              感動で毎日気分が上がる！この快適さがやめられない！
+            </p>
+          </div>
+        </div>
+        <p class="featured-recommend-label">こんな方におすすめ</p>
+        <div class="featured-points">
+          <div class="featured-point">ツヤのある髪になりたい</div>
+          <div class="featured-point">アホ毛をなくしたい</div>
+          <div class="featured-point">今まで矯正で納得したことがない</div>
+          <div class="featured-point">アイロンしてもバサバサになる</div>
+          <div class="featured-point">朝のセットを時短したい</div>
+          <div class="featured-point">不自然なストレートはイヤ</div>
+          <div class="featured-point">ストレートをかけてもコテで巻きたい</div>
+          <div class="featured-point">年齢による髪の変化を感じる</div>
+        </div>
+        <div class="featured-price">
+          <p class="label">料金（税抜）</p>
+          <span class="amount">¥22,000</span><span class="price-sep"> ～ </span><span class="unit">¥35,000</span>
+          <span class="tax">※カット込み。ダメージ・ボリューム・長さによりかなり変わります。</span>
+        </div>
+        <a href="#reserve" class="btn btn-primary">このメニューで予約する</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== メニュー一覧 ===== -->
+<section id="menu">
+  <div class="container">
+    <div class="section-title fade-in">
+      <span class="en">Menu & Price</span>
+      <span class="ja">メニュー・料金</span>
+      <span class="bar"></span>
+    </div>
+    <div class="menu-tax-wrap fade-in">
+      <span class="menu-tax-note">※ 料金はすべて税抜表示です。</span>
+    </div>
+
+    <div class="menu-grid fade-in">
+
+      <!-- カット -->
+      <div class="menu-card">
+        <div class="menu-card-img">
+          <img src="img/cut.jpg" alt="カット" style="width:100%;height:100%;object-fit:cover;">
+        </div>
+        <div class="menu-card-body">
+          <p class="menu-card-cat">CUT</p>
+          <h3 class="menu-card-name">カット</h3>
+          <table class="price-table">
+            <tr><td>一般・大学・専門学生</td><td>¥6,000</td></tr>
+            <tr><td>高校生〜未就学児</td><td>¥5,000</td></tr>
+          </table>
+          <p class="menu-card-sub-price" style="margin-top:8px;">骨格・髪質・毛流れを見て、毎日のスタイリングが楽でバランスの良さが長持ちするカットをご提供。</p>
+        </div>
+      </div>
+
+      <!-- カラー -->
+      <div class="menu-card">
+        <div class="menu-card-img">
+          <img src="img/color.jpg" alt="カラー" style="width:100%;height:100%;object-fit:cover;">
+        </div>
+        <div class="menu-card-body">
+          <p class="menu-card-cat">COLOR</p>
+          <h3 class="menu-card-name">カラー</h3>
+          <p class="menu-card-price">¥7,000〜¥11,000 <span class="tax">（税抜）</span></p>
+          <p class="menu-card-sub-price">カラー後に数種の処置をきちんと行うことで、頭皮も髪もケア。安心とキレイな髪と色をご提供。</p>
+          <span class="menu-card-note">カラーのみご来店の場合、別途ブロー料金（¥1,000〜¥2,000）が必要です</span>
+        </div>
+      </div>
+
+      <!-- ケアブリーチ -->
+      <div class="menu-card">
+        <div class="menu-card-img">
+          <img src="img/bleach.jpg" alt="ケアブリーチ" style="width:100%;height:100%;object-fit:cover;">
+        </div>
+        <div class="menu-card-body">
+          <p class="menu-card-cat">CARE BLEACH</p>
+          <h3 class="menu-card-name">ケアブリーチ</h3>
+          <p class="menu-card-price">¥10,000〜¥16,000 <span class="tax">（税抜）</span></p>
+          <p class="menu-card-sub-price">髪の強度を保たせる成分を調合してブリーチを行います。</p>
+          <p class="menu-card-sub-price" style="margin-top:6px;font-size:0.75rem;">★ ハイトーンをする為にブリーチが２回必要な場合は上記の費用の2回分が必要になり、さらに色を入れる場合は＋カラー料金が必要になります。</p>
+          <span class="menu-card-note">カラーのみご来店の場合、別途ブロー料金（¥1,000〜¥2,000）が必要です</span>
+        </div>
+      </div>
+
+      <!-- ハイライト -->
+      <div class="menu-card">
+        <div class="menu-card-img">
+          <img src="img/highlight.jpg" alt="ハイライト" style="width:100%;height:100%;object-fit:cover;">
+        </div>
+        <div class="menu-card-body">
+          <p class="menu-card-cat">HIGHLIGHT</p>
+          <h3 class="menu-card-name">ハイライト</h3>
+          <p class="menu-card-price">¥4,500〜¥12,000 <span class="tax">（税抜）</span></p>
+          <p class="menu-card-sub-price">立体感と奥行きを出し、ナチュラルに華やかな印象に。白髪が集まっている所に入れれば白髪が伸びても気になりにくい。</p>
+          <span class="menu-card-note">カラーのみご来店の場合、別途ブロー料金（¥1,000〜¥2,000）が必要です</span>
+        </div>
+      </div>
+
+      <!-- パーマ -->
+      <div class="menu-card">
+        <div class="menu-card-img">
+          <img src="img/perm.jpg" alt="パーマ" style="width:100%;height:100%;object-fit:cover;">
+        </div>
+        <div class="menu-card-body">
+          <p class="menu-card-cat">PERM</p>
+          <h3 class="menu-card-name">パーマ</h3>
+          <p class="menu-card-price">¥13,500〜¥15,500 <span class="tax">（税抜・カット込）</span></p>
+        </div>
+      </div>
+
+      <!-- デジタルパーマ -->
+      <div class="menu-card">
+        <div class="menu-card-img">
+          <img src="img/digital-perm.jpg" alt="デジタルパーマ" style="width:100%;height:100%;object-fit:cover;">
+        </div>
+        <div class="menu-card-body">
+          <p class="menu-card-cat">DIGITAL PERM</p>
+          <h3 class="menu-card-name">デジタルパーマ</h3>
+          <p class="menu-card-price">¥18,000 <span class="tax">（税抜・カット込）</span></p>
+        </div>
+      </div>
+
+      <!-- オイルストレート（画像はオーナー提供） -->
+      <div class="menu-card featured-item">
+        <div class="menu-card-img" style="background:#f5f0ec;">
+          <img src="img/oil-straight.jpg" alt="オイルストレート施術例" style="width:100%;height:100%;object-fit:contain;">
+        </div>
+        <div class="menu-card-body">
+          <p class="menu-card-cat">OIL STRAIGHT</p>
+          <h3 class="menu-card-name">オイルストレート</h3>
+          <p class="menu-card-price">¥22,000〜¥35,000 <span class="tax">（税抜・カット込）</span></p>
+          <p class="menu-card-sub-price">ダメージ・長さ・ボリュームにより価格が変動します。</p>
+        </div>
+      </div>
+
+      <!-- トリートメント -->
+      <div class="menu-card">
+        <div class="menu-card-img">
+          <img src="img/treatment.jpg" alt="トリートメント" style="width:100%;height:100%;object-fit:cover;">
+        </div>
+        <div class="menu-card-body">
+          <p class="menu-card-cat">TREATMENT</p>
+          <h3 class="menu-card-name">トリートメント</h3>
+          <p class="menu-card-price">¥3,500〜¥7,000 <span class="tax">（税抜）</span></p>
+          <p class="menu-card-sub-price">３ステップタイプと５ステップタイプ</p>
+        </div>
+      </div>
+
+      <!-- シャンプーブロー -->
+      <div class="menu-card">
+        <div class="menu-card-img">
+          <img src="img/blow.jpg" alt="シャンプーブロー" style="width:100%;height:100%;object-fit:cover;">
+        </div>
+        <div class="menu-card-body">
+          <p class="menu-card-cat">SHAMPOO & BLOWOUT</p>
+          <h3 class="menu-card-name">シャンプーブロー</h3>
+          <p class="menu-card-price">¥3,500〜¥5,000 <span class="tax">（税抜）</span></p>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+
+<!-- ===== ブログ ===== -->
+<section id="blog">
+  <div class="container">
+    <div class="section-title fade-in">
+      <span class="en">Blog</span>
+      <span class="ja">スタッフブログ</span>
+      <span class="bar"></span>
+    </div>
+    <div class="blog-grid fade-in">
+      <a href="https://poised-mars-bbf.notion.site/KANSHA-342861b9c7b980f688c3f43a751013e2" target="_blank" rel="noopener" class="blog-card" style="text-decoration:none;color:inherit;">
+        <div class="blog-card-img" style="background:linear-gradient(135deg,#F2D0D8,#D4849A);">✍️</div>
+        <div class="blog-card-body">
+          <p class="blog-card-date">2026.04.14</p>
+          <h3 class="blog-card-title">はじめまして。美容室 KANSHAの髙尾総一です。</h3>
+          <span class="blog-card-tag">自己紹介</span>
+        </div>
+      </a>
+      <div class="blog-card" style="opacity:0.35;pointer-events:none;">
+        <div class="blog-card-img" style="background:linear-gradient(135deg,#F0C080,#D4789A);">🌸</div>
+        <div class="blog-card-body">
+          <p class="blog-card-date">近日公開</p>
+          <h3 class="blog-card-title">次の記事を準備中…</h3>
+          <span class="blog-card-tag">coming soon</span>
+        </div>
+      </div>
+      <div class="blog-card" style="opacity:0.35;pointer-events:none;">
+        <div class="blog-card-img" style="background:linear-gradient(135deg,#A8D8DF,#4BAAB8);">💡</div>
+        <div class="blog-card-body">
+          <p class="blog-card-date">近日公開</p>
+          <h3 class="blog-card-title">次の記事を準備中…</h3>
+          <span class="blog-card-tag">coming soon</span>
+        </div>
+      </div>
+    </div>
+    <div class="blog-center">
+      <a href="https://poised-mars-bbf.notion.site/KANSHA-342861b9c7b980f688c3f43a751013e2" target="_blank" rel="noopener" class="btn btn-outline">ブログをもっと見る</a>
+    </div>
+  </div>
+</section>
+
+<!-- ===== SNS ===== -->
+<section id="sns">
+  <div class="sns-inner container">
+    <p class="sns-title">Instagram</p>
+    <p class="sns-handle">@biyoushitsu_kansha</p>
+    <p class="sns-sub">施術写真・最新情報を発信中</p>
+    <div class="sns-grid">
+      <!-- sns01.jpg〜sns05.jpg をフォルダに入れると自動表示されます -->
+      <div class="sns-img">
+        <img src="sns01.jpg" alt="Instagram投稿1"
+             onerror="this.style.display='none';">
+      </div>
+      <div class="sns-img">
+        <img src="sns02.jpg" alt="Instagram投稿2"
+             onerror="this.style.display='none';">
+      </div>
+      <div class="sns-img">
+        <img src="sns03.jpg" alt="Instagram投稿3"
+             onerror="this.style.display='none';">
+      </div>
+      <div class="sns-img">
+        <img src="sns04.jpg" alt="Instagram投稿4"
+             onerror="this.style.display='none';">
+      </div>
+      <div class="sns-img">
+        <img src="sns05.jpg" alt="Instagram投稿5"
+             onerror="this.style.display='none';">
+      </div>
+    </div>
+    <div class="sns-links">
+      <a href="https://www.instagram.com/biyoushitsu_kansha" target="_blank" rel="noopener" class="sns-link">📷 Instagramをフォローする</a>
+    </div>
+  </div>
+</section>
+
+<!-- ===== FAQ ===== -->
+<section id="faq">
+  <div class="container">
+    <div class="section-title fade-in">
+      <span class="en">FAQ</span>
+      <span class="ja">よくあるご質問</span>
+      <span class="bar"></span>
+    </div>
+    <div class="faq-list fade-in">
+      <div class="faq-item">
+        <button class="faq-q">
+          <span class="faq-q-icon">Q</span>
+          オイルストレートと縮毛矯正との違いは何ですか？
+        </button>
+        <p class="faq-a open">
+          ほとんどの美容師は、施術工程でアイロンを使用すれば縮毛矯正に分類しますので、オイルストレートも縮毛矯正に属します。
+        </p>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q">
+          <span class="faq-q-icon">Q</span>
+          オイルストレートとはどんなメニューですか？
+        </button>
+        <p class="faq-a">
+          オイル成分の入った薬剤が、クセ・うねりを伸ばし、毛の凸凹を滑らかにするのはもちろんの事、潤い感のあるツヤ、しなやかな手触りがとても長く持続するのが特徴。
+        </p>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q">
+          <span class="faq-q-icon">Q</span>
+          オイルストレートはカラーと同時に施術できますか？
+        </button>
+        <p class="faq-a">
+          今よりも暗くする、もしくは同じくらいの明るさで色を変える場合は可能です。明るくする場合は、オイルストレートをした後日にカラーされることをお勧めします。ご予約の際にご相談ください。
+        </p>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q">
+          <span class="faq-q-icon">Q</span>
+          キレイな髪にしていくには何に気を付ければいいですか？
+        </button>
+        <p class="faq-a">
+          きちんとご説明をすると長くなるので項目だけ。髪が濡れててまとめる時 ゴムやクリップ✖ タオル〇、低温系ドライヤーを使う、手触りの良くなるだけのシャンプートリートメントにダマされない、高価なアイロンより熱から守る物を必ずつける、枕カバーパイル生地✖ シルク〇、他にも…　言葉足らずの為 詳細はサロンかブログで。
+        </p>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q">
+          <span class="faq-q-icon">Q</span>
+          オイルストレートはどれくらい持ちますか？
+        </button>
+        <p class="faq-a">
+          新しく生えてきた毛がS字に曲がっているとその部分の影響で全体が曲がって見えますが、ストレートになった部分は切るまでまっすぐです。お家で髪を傷めてしまう物が、シャンプー、アイロン熱、摩擦、紫外線ですので、潤い感のあるツヤ や ツルツルの手触りは、お家でのヘアケアでかなり差が出て、４ヶ月～２年半。
+        </p>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q">
+          <span class="faq-q-icon">Q</span>
+          オイルストレートはどれくらい時間がかかりますか？
+        </button>
+        <p class="faq-a">
+          ダメージ・長さ・ボリュームにより変わりますが３時間～５時間みておいてください。
+        </p>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q">
+          <span class="faq-q-icon">Q</span>
+          予約はどうすれば良いですか？
+        </button>
+        <p class="faq-a">
+          ご予約はお電話（06-7502-4415）またはInstagram DM（@biyoushitsu_kansha）にて。ただしインスタDMの場合、返信が遅れる場合がございます。
+        </p>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q">
+          <span class="faq-q-icon">Q</span>
+          駐車場・駐輪場はありますか？
+        </button>
+        <p class="faq-a">
+          お店の斜め前の駐車場・入ってすぐ左側１番　かんしゃという看板がありますのでご利用ください。自転車・単車はお店の前の空いているスペースにお停めください。
+        </p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== アクセス ===== -->
+<section id="access">
+  <div class="container">
+    <div class="section-title fade-in">
+      <span class="en">Access</span>
+      <span class="ja">アクセス・営業情報</span>
+      <span class="bar"></span>
+    </div>
+    <div class="access-grid">
+      <div class="fade-in">
+        <p class="access-name">美容室 KANSHA（かんしゃ）</p>
+        <div class="access-list">
+          <div class="access-item">
+            <span class="access-item-label">住所</span>
+            <span class="access-item-val">〒661-0035<br>兵庫県尼崎市武庫之荘１－３－４</span>
+          </div>
+          <div class="access-item">
+            <span class="access-item-label">電話</span>
+            <span class="access-item-val"><a href="tel:0675024415">06-7502-4415</a></span>
+          </div>
+          <div class="access-item">
+            <span class="access-item-label">営業時間</span>
+            <span class="access-item-val">9:00〜18:00（最終受付）</span>
+          </div>
+          <div class="access-item">
+            <span class="access-item-label">駐車場</span>
+            <span class="access-item-val">1台（無料）</span>
+          </div>
+        </div>
+
+        <!-- 予約方法 -->
+        <div class="reserve-methods">
+          <div class="reserve-method">
+            <p class="reserve-method-name">美容室かんしゃ へのご予約</p>
+            <div class="reserve-method-btns">
+              <a href="tel:0675024415" class="rm-btn rm-btn-tel">📞 06-7502-4415</a>
+              <a href="https://www.instagram.com/biyoushitsu_kansha" target="_blank" rel="noopener" class="rm-btn rm-btn-insta">📷 Instagram DM</a>
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- Google Maps -->
+      <div class="access-map fade-in">
+        <iframe
+          src="https://maps.google.com/maps?q=兵庫県尼崎市武庫之荘1-3-4&output=embed&hl=ja"
+          loading="lazy"
+          title="美容室KANSHAの地図"
+          allowfullscreen>
+        </iframe>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== 予約CTA ===== -->
+<section id="reserve">
+  <div class="container">
+    <h2 class="reserve-title">ご予約・お問い合わせ</h2>
+    <div class="reserve-grid">
+      <div class="reserve-card">
+        <p class="reserve-card-name">美容室かんしゃ</p>
+        <div class="reserve-card-btns">
+          <a href="tel:0675024415" class="rc-btn rc-btn-tel">📞 06-7502-4415</a>
+          <a href="https://www.instagram.com/biyoushitsu_kansha" target="_blank" rel="noopener" class="rc-btn rc-btn-insta">📷 Instagram DM</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== フッター ===== -->
+<footer id="footer">
+  <div class="container">
+    <div class="footer-inner">
+      <div class="footer-brand">
+        <div class="footer-logo">
+          <div style="background:white;border-radius:8px;padding:3px 7px;line-height:0;"
+               id="footer-logo-box">
+            <img src="logo.png" alt="美容室かんしゃ" height="36"
+                 onerror="document.getElementById('footer-logo-box').style.display='none';">
+          </div>
+          <div class="logo-text">
+            <span class="en">KANSHA</span>
+            <span class="ja">美容室かんしゃ</span>
+          </div>
+        </div>
+        <p>〒661-0035 兵庫県尼崎市武庫之荘１－３－４<br>TEL: 06-7502-4415<br>営業時間: 9:00〜18:00（最終受付）<br>定休日: 月・火曜日</p>
+      </div>
+      <div class="footer-col">
+        <h4>MENU</h4>
+        <ul>
+          <li><a href="#concept">KANSHAについて</a></li>
+          <li><a href="#featured">オイルストレート</a></li>
+          <li><a href="#menu">メニュー・料金</a></li>
+          <li><a href="#blog">ブログ</a></li>
+          <li><a href="#access">アクセス</a></li>
+          <li><a href="#faq">よくあるご質問</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>CONTACT</h4>
+        <ul>
+          <li><a href="tel:0675024415">お電話: 06-7502-4415</a></li>
+          <li><a href="https://www.instagram.com/biyoushitsu_kansha" target="_blank" rel="noopener">Instagram DM（美容室かんしゃ）</a></li>
+          <li><a href="#">プライバシーポリシー</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>© 2026 美容室 KANSHA. All rights reserved.</p>
+      <p style="opacity:0.4;font-size:0.72rem;">Designed with ♡</p>
+    </div>
+  </div>
+</footer>
+
+<!-- ===== フロートボタン ===== -->
+<div class="float-btn">
+  <a href="tel:0675024415" class="float-item float-tel" title="お電話">📞</a>
+  <a href="https://www.instagram.com/biyoushitsu_kansha" target="_blank" rel="noopener" class="float-item float-insta" title="Instagram">📷</a>
+</div>
+
+<!-- ===== JavaScript ===== -->
+<script>
+  // 電話リンク：PCでは発信ダイアログを出さず案内メッセージを表示
+  const isMobile = /iPhone|iPad|iPod|Android/i.test(navigator.userAgent);
+  document.querySelectorAll('a[href^="tel:"]').forEach(function(link) {
+    if (!isMobile) {
+      link.addEventListener('click', function(e) {
+        e.preventDefault();
+        let msg = link.parentElement.querySelector('.tel-pc-msg');
+        if (!msg) {
+          msg = document.createElement('p');
+          msg.className = 'tel-pc-msg';
+          msg.textContent = '直接お電話ください：06-7502-4415';
+          link.parentElement.appendChild(msg);
+        }
+        msg.style.display = 'block';
+        setTimeout(function() { msg.style.display = 'none'; }, 4000);
+      });
+    }
+  });
+
+  // ビフォーアフタースライダー
+  let baCurrent = 0;
+  const baTotal = 5;
+  function baUpdate() {
+    document.getElementById('baTrack').style.transform = `translateX(-${baCurrent * 100}%)`;
+    document.getElementById('baCounter').textContent = `${baCurrent + 1} / ${baTotal}`;
+    document.querySelectorAll('.ba-dot').forEach((d, i) => d.classList.toggle('active', i === baCurrent));
+  }
+  function baMove(dir) {
+    baCurrent = (baCurrent + dir + baTotal) % baTotal;
+    baUpdate();
+  }
+  function baGo(idx) {
+    baCurrent = idx;
+    baUpdate();
+  }
+
+  // 月別メッセージ
+  const monthMessages = [
+    { label: '1月', text: '冬の乾燥で髪もパサつく季節。オイルストレートで潤いとツヤを手に入れませんか。' },
+    { label: '2月', text: '寒さで髪が静電気でまとまらない…そんな悩みにオイルストレートが効果的です。' },
+    { label: '3月', text: '春のはじまりに、髪も新しく。花粉の季節の広がり・うねり対策にオイルストレートを。' },
+    { label: '4月', text: '新生活スタートの季節。毎朝のスタイリングをもっとラクに、もっと美しく。オイルストレートで春を楽しんで。' },
+    { label: '5月', text: '湿気が増えるこの時期、うねりや広がりが気になりはじめたらオイルストレートのご相談を。' },
+    { label: '6月', text: '梅雨入り前がオイルストレートのベストタイミング。雨の日も髪がまとまる快適な夏を。' },
+    { label: '7月', text: '湿気・汗・日差し…夏の髪ダメージに備えて。オイルストレートで扱いやすい髪を手に入れて。' },
+    { label: '8月', text: '真夏の紫外線で髪もダメージ蓄積中。今こそトリートメントで髪の体力を取り戻しましょう。' },
+    { label: '9月', text: '夏のダメージをリセットする秋。オイルストレートで秋冬の艶髪づくりをはじめませんか。' },
+    { label: '10月', text: '秋の乾燥シーズン到来。ツヤのある髪で装いを格上げ。オイルストレートで艶髪を。' },
+    { label: '11月', text: '冬支度の前に髪もケアを。乾燥に負けないしっとり艶髪はオイルストレートで叶います。' },
+    { label: '12月', text: '年末年始は大切な人と過ごす特別な季節。晴れの日に向けて髪を整えてみませんか。' },
+  ];
+  const month = new Date().getMonth();
+  document.getElementById('news-bar-label').textContent = monthMessages[month].label;
+  document.getElementById('news-bar-text').textContent = monthMessages[month].text;
+
+  // ハンバーガーメニュー
+  function toggleNav() {
+    document.getElementById('mobileNav').classList.toggle('open');
+  }
+  // 外側クリックで閉じる
+  document.addEventListener('click', function(e) {
+    const nav = document.getElementById('mobileNav');
+    const ham = document.querySelector('.hamburger');
+    if (nav.classList.contains('open') && !nav.contains(e.target) && !ham.contains(e.target)) {
+      nav.classList.remove('open');
+    }
+  });
+
+  // スクロールでヘッダーに影
+  window.addEventListener('scroll', () => {
+    document.getElementById('header').classList.toggle('scrolled', window.scrollY > 10);
+  });
+
+  // スクロールアニメーション
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach((entry, i) => {
+      if (entry.isIntersecting) {
+        setTimeout(() => entry.target.classList.add('visible'), i * 70);
+      }
+    });
+  }, { threshold: 0.1 });
+  document.querySelectorAll('.fade-in').forEach(el => observer.observe(el));
+
+  // メニュー画像：読み込み失敗時のみグラデーション表示
+  document.querySelectorAll('.menu-card-img img').forEach(img => {
+    img.addEventListener('error', function() {
+      this.style.display = 'none';
+      this.parentElement.style.background = 'linear-gradient(135deg,#F2D0D8 0%,#A8D8DF 100%)';
+    });
+  });
+
+  // FAQ アコーディオン
+  document.querySelectorAll('.faq-q').forEach(btn => {
+    btn.addEventListener('click', () => {
+      const answer = btn.nextElementSibling;
+      const isOpen = answer.classList.contains('open');
+      document.querySelectorAll('.faq-a').forEach(a => a.classList.remove('open'));
+      if (!isOpen) answer.classList.add('open');
+    });
+  });
+</script>
+
+</body>
+</html>
