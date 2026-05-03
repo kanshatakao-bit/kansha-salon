@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://kanshatakao-bit.github.io/kansha-salon/sitemap.xml
