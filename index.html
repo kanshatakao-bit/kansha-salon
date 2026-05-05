@@ -146,6 +146,7 @@
     .gi { border-radius: 14px; overflow: hidden; box-shadow: 0 8px 28px rgba(0,0,0,0.09); transition: transform 0.35s cubic-bezier(.22,.68,0,1.2), box-shadow 0.35s; background: #f5f0ec; }
     .gi img { width: 100%; height: auto; display: block; }
     .gi:hover { transform: scale(1.02); box-shadow: 0 16px 44px rgba(0,0,0,0.14); z-index: 2; position: relative; }
+    .interior-grid .gi:last-child { grid-column: 2; }
 
     /* ===== 看板メニュー ===== */
     #featured { padding: 100px 0; background: linear-gradient(160deg, var(--pink-pale) 0%, #F0F8FA 100%); }
@@ -506,37 +507,20 @@
     <div class="interior-gallery fade-in">
       <div class="gallery-heading"><span>— サロンギャラリー —</span></div>
       <div class="interior-grid">
-        <!-- interior01.jpg〜interior06.jpg をフォルダに入れると自動表示 -->
-        <div class="gi gi-1">
-          <img src="interior01.JPG" alt="店内の様子">
-        </div>
-        <div class="gi gi-2">
-          <img src="interior02.JPG" alt="店内の様子">
-        </div>
-        <div class="gi gi-3">
-          <img src="interior03.JPG" alt="店内の様子">
-        </div>
-        <div class="gi gi-4">
-          <img src="interior04.JPG" alt="店内の様子">
-        </div>
-        <div class="gi gi-5">
-          <img src="interior05.JPG" alt="店内の様子">
-        </div>
-        <div class="gi gi-6">
-          <img src="interior06.JPG" alt="店内の様子">
-        </div>
-        <div class="gi gi-7">
-          <img src="interior07.JPG" alt="店内の様子">
-        </div>
-        <div class="gi gi-8">
-          <img src="interior08.JPG" alt="店内の様子">
-        </div>
-        <div class="gi gi-9">
-          <img src="interior09.JPG" alt="店内の様子">
-        </div>
-        <div class="gi gi-10">
-          <img src="interior10.JPG" alt="店内の様子">
-        </div>
+        <!-- 行1: 横長3枚（比率1.333）→ 隙間ゼロ -->
+        <div class="gi"><img src="interior01.JPG" alt="店内の様子"></div>
+        <div class="gi"><img src="interior02.JPG" alt="店内の様子"></div>
+        <div class="gi"><img src="interior03.JPG" alt="店内の様子"></div>
+        <!-- 行2: 横長3枚（比率1.495・1.333・1.333）→ 隙間最小 -->
+        <div class="gi"><img src="interior06.JPG" alt="店内の様子"></div>
+        <div class="gi"><img src="interior08.JPG" alt="店内の様子"></div>
+        <div class="gi"><img src="interior10.JPG" alt="店内の様子"></div>
+        <!-- 行3: 縦長3枚まとめ（比率0.679・0.649・0.794）→ 隙間最小 -->
+        <div class="gi"><img src="interior05.JPG" alt="店内の様子"></div>
+        <div class="gi"><img src="interior09.JPG" alt="店内の様子"></div>
+        <div class="gi"><img src="interior04.JPG" alt="店内の様子"></div>
+        <!-- 行4: ほぼ正方形1枚（比率0.969）-->
+        <div class="gi"><img src="interior07.JPG" alt="店内の様子"></div>
       </div>
     </div>
   </div>
