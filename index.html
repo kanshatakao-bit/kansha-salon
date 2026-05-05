@@ -142,15 +142,19 @@
     /* Interior Gallery */
     .gallery-heading { text-align: center; margin-bottom: 32px; }
     .gallery-heading span { font-family: var(--ff-serif); font-size: 1.05rem; color: var(--navy); letter-spacing: 0.15em; display: inline-block; border-bottom: 1.5px solid var(--pink-light); padding-bottom: 7px; }
-    .interior-grid { display: grid; grid-template-columns: repeat(3, 1fr); grid-template-rows: 210px 210px 210px; gap: 18px; }
+    .interior-grid { display: grid; grid-template-columns: repeat(3, 1fr); grid-template-rows: 240px 180px 240px 180px; gap: 18px; }
     .gi { border-radius: 14px; overflow: hidden; box-shadow: 0 8px 28px rgba(0,0,0,0.09); transition: transform 0.35s cubic-bezier(.22,.68,0,1.2), box-shadow 0.35s; background: linear-gradient(135deg,#F2D0D8 0%,#A8D8DF 100%); }
     .gi img { width: 100%; height: 100%; object-fit: cover; display: block; }
-    .gi-1 { grid-column: 1; grid-row: 1 / 3; transform: rotate(-1.6deg); }
-    .gi-2 { grid-column: 2; grid-row: 1;    transform: rotate(1.1deg); }
-    .gi-3 { grid-column: 3; grid-row: 1 / 3; transform: rotate(-0.9deg); }
-    .gi-4 { grid-column: 2; grid-row: 2;    transform: rotate(-1.3deg); }
-    .gi-5 { grid-column: 1; grid-row: 3;    transform: rotate(1.4deg); }
-    .gi-6 { grid-column: 2 / 4; grid-row: 3; transform: rotate(-0.6deg); }
+    .gi-1  { grid-column: 1;     grid-row: 1; transform: rotate(-1.2deg); }
+    .gi-2  { grid-column: 2 / 4; grid-row: 1; transform: rotate(0.7deg); }
+    .gi-3  { grid-column: 1;     grid-row: 2; transform: rotate(1.1deg); }
+    .gi-4  { grid-column: 2;     grid-row: 2; transform: rotate(-0.9deg); }
+    .gi-5  { grid-column: 3;     grid-row: 2; transform: rotate(1.3deg); }
+    .gi-6  { grid-column: 1 / 3; grid-row: 3; transform: rotate(-0.6deg); }
+    .gi-7  { grid-column: 3;     grid-row: 3; transform: rotate(1.0deg); }
+    .gi-8  { grid-column: 1;     grid-row: 4; transform: rotate(-1.1deg); }
+    .gi-9  { grid-column: 2;     grid-row: 4; transform: rotate(0.8deg); }
+    .gi-10 { grid-column: 3;     grid-row: 4; transform: rotate(-0.5deg); }
     .gi:hover { transform: rotate(0deg) scale(1.03) !important; box-shadow: 0 16px 44px rgba(0,0,0,0.14); z-index: 2; position: relative; }
     .gi-placeholder { width: 100%; height: 100%; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 8px; color: rgba(255,255,255,0.7); font-size: 0.72rem; letter-spacing: 0.06em; }
 
@@ -373,13 +377,17 @@
       .hero-title { font-size: 1.9rem; }
       #hero { min-height: auto; padding: 100px 0 60px; }
       .about-blocks { grid-template-columns: 1fr; }
-      .interior-grid { grid-template-columns: repeat(2, 1fr); grid-template-rows: 160px 160px 160px 160px; }
-      .gi-1 { grid-column: 1; grid-row: 1 / 3; transform: none; }
-      .gi-2 { grid-column: 2; grid-row: 1; transform: none; }
-      .gi-3 { grid-column: 2; grid-row: 2 / 4; transform: none; }
-      .gi-4 { grid-column: 1; grid-row: 3; transform: none; }
-      .gi-5 { grid-column: 1; grid-row: 4; transform: none; }
-      .gi-6 { grid-column: 2; grid-row: 4; transform: none; }
+      .interior-grid { grid-template-columns: repeat(2, 1fr); grid-template-rows: 160px 160px 160px 160px 160px; }
+      .gi-1  { grid-column: 1 / 3; grid-row: 1; transform: none; }
+      .gi-2  { grid-column: 1;     grid-row: 2; transform: none; }
+      .gi-3  { grid-column: 2;     grid-row: 2; transform: none; }
+      .gi-4  { grid-column: 1;     grid-row: 3; transform: none; }
+      .gi-5  { grid-column: 2;     grid-row: 3; transform: none; }
+      .gi-6  { grid-column: 1 / 3; grid-row: 4; transform: none; }
+      .gi-7  { grid-column: 1;     grid-row: 5; transform: none; }
+      .gi-8  { grid-column: 2;     grid-row: 5; transform: none; }
+      .gi-9  { grid-column: 1;     grid-row: 6; transform: none; }
+      .gi-10 { grid-column: 2;     grid-row: 6; transform: none; }
       .gi:hover { transform: none !important; }
       .featured-card-img { height: 260px; }
       .featured-card-body { padding: 28px 24px; }
@@ -542,6 +550,22 @@
         <div class="gi gi-6">
           <img src="interior06.jpg" alt="店内の様子"
                onerror="this.style.display='none';this.parentElement.innerHTML='<div class=\'gi-placeholder\'>interior06.jpg</div>';">
+        </div>
+        <div class="gi gi-7">
+          <img src="interior07.jpg" alt="店内の様子"
+               onerror="this.style.display='none';this.parentElement.innerHTML='<div class=\'gi-placeholder\'>interior07.jpg</div>';">
+        </div>
+        <div class="gi gi-8">
+          <img src="interior08.jpg" alt="店内の様子"
+               onerror="this.style.display='none';this.parentElement.innerHTML='<div class=\'gi-placeholder\'>interior08.jpg</div>';">
+        </div>
+        <div class="gi gi-9">
+          <img src="interior09.jpg" alt="店内の様子"
+               onerror="this.style.display='none';this.parentElement.innerHTML='<div class=\'gi-placeholder\'>interior09.jpg</div>';">
+        </div>
+        <div class="gi gi-10">
+          <img src="interior10.jpg" alt="店内の様子"
+               onerror="this.style.display='none';this.parentElement.innerHTML='<div class=\'gi-placeholder\'>interior10.jpg</div>';">
         </div>
       </div>
     </div>
