@@ -142,8 +142,9 @@
     /* Interior Gallery */
     .gallery-heading { text-align: center; margin-bottom: 32px; }
     .gallery-heading span { font-family: var(--ff-serif); font-size: 1.05rem; color: var(--navy); letter-spacing: 0.15em; display: inline-block; border-bottom: 1.5px solid var(--pink-light); padding-bottom: 7px; }
-    .interior-grid { column-count: 3; column-gap: 16px; }
-    .gi { break-inside: avoid; margin-bottom: 16px; border-radius: 14px; overflow: hidden; box-shadow: 0 8px 28px rgba(0,0,0,0.09); transition: transform 0.35s cubic-bezier(.22,.68,0,1.2), box-shadow 0.35s; background: #f5f0ec; display: block; }
+    .interior-grid { display: flex; gap: 16px; align-items: flex-start; }
+    .gi-col { flex: 1; display: flex; flex-direction: column; gap: 16px; }
+    .gi { border-radius: 14px; overflow: hidden; box-shadow: 0 8px 28px rgba(0,0,0,0.09); transition: transform 0.35s cubic-bezier(.22,.68,0,1.2), box-shadow 0.35s; background: #f5f0ec; }
     .gi img { width: 100%; height: auto; display: block; }
     .gi:hover { transform: scale(1.02); box-shadow: 0 16px 44px rgba(0,0,0,0.14); }
 
@@ -366,7 +367,8 @@
       .hero-title { font-size: 1.9rem; }
       #hero { min-height: auto; padding: 100px 0 60px; }
       .about-blocks { grid-template-columns: 1fr; }
-      .interior-grid { column-count: 2; }
+      .interior-grid { flex-wrap: wrap; }
+      .gi-col { flex: 0 0 calc(50% - 8px); }
       .gi:hover { transform: none !important; }
       .featured-card-img { height: 260px; }
       .featured-card-body { padding: 28px 24px; }
@@ -385,7 +387,7 @@
     }
     @media (max-width: 600px) {
       .menu-grid { grid-template-columns: 1fr; }
-      .interior-grid { column-count: 1; }
+      .gi-col { flex: 0 0 100%; }
       .blog-grid { grid-template-columns: 1fr; }
       .sns-grid { grid-template-columns: repeat(3, 1fr); }
       .section-title .ja { font-size: 1.3rem; }
@@ -506,16 +508,22 @@
     <div class="interior-gallery fade-in">
       <div class="gallery-heading"><span>— サロンギャラリー —</span></div>
       <div class="interior-grid">
-        <div class="gi"><img src="interior01.JPG" alt="店内の様子"></div>
-        <div class="gi"><img src="interior09.JPG" alt="店内の様子"></div>
-        <div class="gi"><img src="interior02.JPG" alt="店内の様子"></div>
-        <div class="gi"><img src="interior05.JPG" alt="店内の様子"></div>
-        <div class="gi"><img src="interior06.JPG" alt="店内の様子"></div>
-        <div class="gi"><img src="interior03.JPG" alt="店内の様子"></div>
-        <div class="gi"><img src="interior10.JPG" alt="店内の様子"></div>
-        <div class="gi"><img src="interior08.JPG" alt="店内の様子"></div>
-        <div class="gi"><img src="interior04.JPG" alt="店内の様子"></div>
-        <div class="gi"><img src="interior07.JPG" alt="店内の様子"></div>
+        <div class="gi-col">
+          <div class="gi"><img src="interior09.JPG" alt="店内の様子"></div>
+          <div class="gi"><img src="interior07.JPG" alt="店内の様子"></div>
+          <div class="gi"><img src="interior01.JPG" alt="店内の様子"></div>
+          <div class="gi"><img src="interior06.JPG" alt="店内の様子"></div>
+        </div>
+        <div class="gi-col">
+          <div class="gi"><img src="interior05.JPG" alt="店内の様子"></div>
+          <div class="gi"><img src="interior04.JPG" alt="店内の様子"></div>
+          <div class="gi"><img src="interior02.JPG" alt="店内の様子"></div>
+        </div>
+        <div class="gi-col">
+          <div class="gi"><img src="interior08.JPG" alt="店内の様子"></div>
+          <div class="gi"><img src="interior03.JPG" alt="店内の様子"></div>
+          <div class="gi"><img src="interior10.JPG" alt="店内の様子"></div>
+        </div>
       </div>
     </div>
   </div>
