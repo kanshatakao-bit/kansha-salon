@@ -135,6 +135,25 @@
     .news-bar-label { background: var(--pink); font-size: 0.72rem; letter-spacing: 0.1em; padding: 4px 12px; border-radius: 3px; white-space: nowrap; }
     .news-bar-text { font-size: 0.83rem; letter-spacing: 0.04em; }
 
+    /* ===== 休み案内カレンダー ===== */
+    #holiday { padding: 100px 0; background: var(--pink-pale); }
+    .holiday-calendars { display: flex; flex-wrap: wrap; justify-content: center; gap: 32px; margin-bottom: 40px; }
+    .holiday-month { background: var(--white); border-radius: 20px; padding: 28px 22px; box-shadow: 0 10px 30px rgba(0,0,0,0.06); width: 100%; max-width: 320px; flex: 1 1 280px; }
+    .holiday-month h4 { font-family: var(--ff-serif); text-align: center; color: var(--navy); font-size: 1.05rem; font-weight: 400; letter-spacing: 0.08em; margin-bottom: 18px; }
+    .holiday-grid { display: grid; grid-template-columns: repeat(7, 1fr); gap: 4px; text-align: center; }
+    .holiday-grid .dow { font-size: 0.72rem; color: var(--text-light); padding-bottom: 8px; }
+    .holiday-grid .dow.sun { color: #C0607E; }
+    .holiday-grid .dow.sat { color: var(--teal); }
+    .holiday-day { font-size: 0.85rem; padding: 8px 0; border-radius: 8px; color: var(--text); }
+    .holiday-day.closed { background: var(--pink-light); font-weight: 600; }
+    .holiday-day.empty { visibility: hidden; }
+    .holiday-legend { max-width: 560px; margin: 0 auto; text-align: center; }
+    .holiday-legend-swatch { display: flex; align-items: center; justify-content: center; gap: 10px; font-size: 0.85rem; color: var(--text); margin-bottom: 16px; }
+    .holiday-swatch { width: 16px; height: 16px; border-radius: 4px; background: var(--pink-light); display: inline-block; flex-shrink: 0; }
+    .holiday-notes { list-style: none; font-size: 0.83rem; color: var(--text-light); line-height: 2; margin-bottom: 14px; }
+    .holiday-note-label { color: var(--navy); }
+    .holiday-caveat { font-size: 0.92rem; color: var(--text-light); }
+
     /* ===== コンセプト ===== */
     /* ===== KANSHAについて ===== */
     #concept { padding: 100px 0; background: var(--white); }
@@ -436,10 +455,11 @@
       </a>
       <nav>
         <a href="#concept">KANSHAについて</a>
-        <a href="#featured">潤艶オイルストレート</a>
+        <a href="#featured">オイルストレート</a>
         <a href="#menu">メニュー</a>
         <a href="#blog">ブログ</a>
         <a href="#access">アクセス</a>
+        <a href="#holiday">休み案内</a>
       </nav>
       <div class="hamburger" onclick="toggleNav()">
         <span></span><span></span><span></span>
@@ -455,6 +475,7 @@
 
   <a href="#blog" onclick="toggleNav()">ブログ</a>
   <a href="#access" onclick="toggleNav()">アクセス</a>
+  <a href="#holiday" onclick="toggleNav()">休み案内</a>
 </div>
 
 <!-- ===== ヒーロー ===== -->
@@ -476,6 +497,7 @@
         </p>
         <div class="hero-cta">
           <a href="#reserve" class="btn btn-primary">ご予約・お問い合わせ</a>
+          <a href="#holiday" class="btn btn-primary">休み案内</a>
         </div>
       </div>
       <div class="hero-visual fade-in" style="position:relative;">
@@ -824,7 +846,7 @@
   <div class="container">
     <div class="section-title fade-in">
       <span class="en">Blog</span>
-      <span class="ja">スタッフブログ</span>
+      <span class="ja">ブログ</span>
       <span class="bar"></span>
     </div>
     <div class="blog-grid fade-in">
@@ -1035,6 +1057,23 @@
   </div>
 </section>
 
+<!-- ===== 休み案内カレンダー ===== -->
+<section id="holiday">
+  <div class="container">
+    <div class="section-title fade-in">
+      <span class="en">Holidays</span>
+      <span class="ja">お休みのご案内</span>
+      <span class="bar"></span>
+    </div>
+    <div class="holiday-calendars fade-in" id="holidayCalendars"></div>
+    <div class="holiday-legend fade-in">
+      <p class="holiday-legend-swatch"><span class="holiday-swatch"></span>薄いピンクの日がお休みです（定休日：毎週月曜・火曜、および臨時休業・長期休暇）</p>
+      <ul class="holiday-notes" id="holidayNotes"></ul>
+      <p class="holiday-caveat">※臨時休業・長期休暇の日程は都合により変更になる場合がございます。最新情報は本カレンダーをご確認ください。</p>
+    </div>
+  </div>
+</section>
+
 <!-- ===== 予約CTA ===== -->
 <section id="reserve">
   <div class="container">
@@ -1067,7 +1106,7 @@
             <span class="ja">美容室かんしゃ</span>
           </div>
         </div>
-        <p>〒661-0035 兵庫県尼崎市武庫之荘１－３－４<br>TEL: 06-7502-4415<br>営業時間: 9:00〜18:00（最終受付）<br>定休日: 月・火曜日</p>
+        <p>〒661-0035 兵庫県尼崎市武庫之荘１－３－４<br>TEL: 06-7502-4415<br>営業時間: 9:00〜18:00（最終受付）<br>定休日: 月・火曜日（<a href="#holiday" style="text-decoration:underline;">休み案内カレンダーはこちら</a>）</p>
       </div>
       <div class="footer-col">
         <h4>MENU</h4>
@@ -1077,6 +1116,7 @@
           <li><a href="#menu">メニュー・料金</a></li>
           <li><a href="#blog">ブログ</a></li>
           <li><a href="#access">アクセス</a></li>
+          <li><a href="#holiday">休み案内</a></li>
           <li><a href="#faq">よくあるご質問</a></li>
         </ul>
       </div>
@@ -1158,6 +1198,78 @@
   const month = new Date().getMonth();
   document.getElementById('news-bar-label').textContent = monthMessages[month].label;
   document.getElementById('news-bar-text').textContent = monthMessages[month].text;
+
+  // ===== 休み案内カレンダー =====
+  // 臨時休業・長期休暇はここに追加していく（決まり次第、1行足すだけでOK）。
+  // 単発の日は { date: 'YYYY-MM-DD', label: '...' }、期間は { start: 'YYYY-MM-DD', end: 'YYYY-MM-DD', label: '...' }
+  const specialHolidays = [
+    { date: '2026-10-17', label: 'マラソン休日' },
+    { date: '2026-11-01', label: 'マラソン休日' },
+    { start: '2026-12-31', end: '2027-01-04', label: '正月休み' },
+    { start: '2027-01-25', end: '2027-02-10', label: 'リフレッシュ休暇' },
+  ].map(h => ({ start: h.date || h.start, end: h.date || h.end, label: h.label }));
+
+  function toISO(d) {
+    return d.getFullYear() + '-' + String(d.getMonth() + 1).padStart(2, '0') + '-' + String(d.getDate()).padStart(2, '0');
+  }
+  function findSpecialHoliday(iso) {
+    return specialHolidays.find(h => iso >= h.start && iso <= h.end) || null;
+  }
+  function formatJP(iso) {
+    const d = new Date(iso + 'T00:00:00');
+    const dowNames = ['日', '月', '火', '水', '木', '金', '土'];
+    return (d.getMonth() + 1) + '/' + d.getDate() + '(' + dowNames[d.getDay()] + ')';
+  }
+
+  // 表示する2か月分を決定：月末の営業終了時刻（18時）を過ぎたら翌月にスライド
+  function getDisplayMonths() {
+    const now = new Date();
+    let year = now.getFullYear();
+    let m = now.getMonth();
+    const lastDate = new Date(year, m + 1, 0).getDate();
+    if (now.getDate() === lastDate && now.getHours() >= 18) {
+      m += 1;
+      if (m > 11) { m = 0; year += 1; }
+    }
+    const first = { year, month: m };
+    let m2 = m + 1, y2 = year;
+    if (m2 > 11) { m2 = 0; y2 += 1; }
+    return [first, { year: y2, month: m2 }];
+  }
+
+  function buildMonthCalendar(year, month) {
+    const monthNames = ['1月','2月','3月','4月','5月','6月','7月','8月','9月','10月','11月','12月'];
+    const firstWeekday = new Date(year, month, 1).getDay();
+    const daysInMonth = new Date(year, month + 1, 0).getDate();
+    let cells = '';
+    for (let i = 0; i < firstWeekday; i++) cells += '<div class="holiday-day empty"></div>';
+    for (let d = 1; d <= daysInMonth; d++) {
+      const dateObj = new Date(year, month, d);
+      const dow = dateObj.getDay();
+      const iso = toISO(dateObj);
+      const closed = dow === 1 || dow === 2 || !!findSpecialHoliday(iso);
+      cells += '<div class="holiday-day' + (closed ? ' closed' : '') + '">' + d + '</div>';
+    }
+    return '<div class="holiday-month"><h4>' + year + '年 ' + monthNames[month] + '</h4>' +
+      '<div class="holiday-grid">' +
+      '<div class="dow sun">日</div><div class="dow">月</div><div class="dow">火</div><div class="dow">水</div><div class="dow">木</div><div class="dow">金</div><div class="dow sat">土</div>' +
+      cells + '</div></div>';
+  }
+
+  const displayMonths = getDisplayMonths();
+  document.getElementById('holidayCalendars').innerHTML =
+    displayMonths.map(dm => buildMonthCalendar(dm.year, dm.month)).join('');
+
+  // 表示中の2か月に重なる臨時休業・長期休暇だけを一覧表示
+  const rangeStart = toISO(new Date(displayMonths[0].year, displayMonths[0].month, 1));
+  const rangeEnd = toISO(new Date(displayMonths[1].year, displayMonths[1].month + 1, 0));
+  const notesHTML = specialHolidays
+    .filter(h => h.start <= rangeEnd && h.end >= rangeStart)
+    .map(h => {
+      const period = h.start === h.end ? formatJP(h.start) : formatJP(h.start) + '〜' + formatJP(h.end);
+      return '<li>' + period + ' <span class="holiday-note-label">' + h.label + '</span></li>';
+    }).join('');
+  document.getElementById('holidayNotes').innerHTML = notesHTML;
 
   // ハンバーガーメニュー
   function toggleNav() {
