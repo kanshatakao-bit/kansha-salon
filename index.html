@@ -1072,7 +1072,9 @@
     <div class="holiday-legend fade-in">
       <p class="holiday-legend-swatch"><span class="holiday-swatch"></span>薄いピンクの日がお休みです（定休日：毎週月曜・火曜、および臨時休業・長期休暇）</p>
       <ul class="holiday-notes" id="holidayNotes"></ul>
-      <p class="holiday-caveat">※臨時休業・長期休暇の日程は都合により変更になる場合がございます。最新情報は本カレンダーをご確認ください。</p>
+      <p class="holiday-legend-swatch" style="margin-top:4px;"><span class="holiday-swatch" style="background:var(--teal-light);"></span>通常は定休日ですが、特別に営業する日</p>
+      <ul class="holiday-notes" id="holidayWorkingNotes"></ul>
+      <p class="holiday-caveat">※臨時休業・長期休暇・特別営業の日程は都合により変更になる場合がございます。最新情報は本カレンダーをご確認ください。</p>
     </div>
   </div>
 </section>
@@ -1208,9 +1210,20 @@
   const specialHolidays = [
     { date: '2026-10-17', label: 'マラソン休日' },
     { date: '2026-11-01', label: 'マラソン休日' },
-    { start: '2026-12-31', end: '2027-01-04', label: '正月休み' },
-    { start: '2027-01-25', end: '2027-02-10', label: 'リフレッシュ休暇' },
+    { start: '2026-12-31', end: '2027-01-03', label: '正月休み' },
+    { start: '2027-01-25', end: '2027-02-11', label: 'リフレッシュ休暇' },
+    { date: '2027-02-28', label: 'マラソン休日' },
   ].map(h => ({ start: h.date || h.start, end: h.date || h.end, label: h.label }));
+
+  // 本来は定休日（毎週月・火）だが、特別に営業する日。決まり次第ここに追加する。
+  const workingExceptions = [
+    '2026-12-28', '2026-12-29',
+    '2027-01-04', '2027-01-05',
+    '2027-01-12',
+    '2027-01-19',
+    '2027-02-16',
+    '2027-02-23',
+  ];
 
   function toISO(d) {
     return d.getFullYear() + '-' + String(d.getMonth() + 1).padStart(2, '0') + '-' + String(d.getDate()).padStart(2, '0');
@@ -1222,6 +1235,25 @@
     const d = new Date(iso + 'T00:00:00');
     const dowNames = ['日', '月', '火', '水', '木', '金', '土'];
     return (d.getMonth() + 1) + '/' + d.getDate() + '(' + dowNames[d.getDay()] + ')';
+  }
+  function isNextDay(iso1, iso2) {
+    const d1 = new Date(iso1 + 'T00:00:00');
+    d1.setDate(d1.getDate() + 1);
+    return toISO(d1) === iso2;
+  }
+  // 連続する日付をひとつの期間にまとめる（例：12/28・12/29 → 12/28(月)〜29(火)）
+  function groupConsecutiveDates(isoList) {
+    const sorted = [...isoList].sort();
+    const groups = [];
+    sorted.forEach(iso => {
+      const last = groups[groups.length - 1];
+      if (last && isNextDay(last.end, iso)) {
+        last.end = iso;
+      } else {
+        groups.push({ start: iso, end: iso });
+      }
+    });
+    return groups;
   }
 
   // 表示する2か月分を決定：月末の営業終了時刻（18時）を過ぎたら翌月にスライド
@@ -1250,7 +1282,8 @@
       const dateObj = new Date(year, month, d);
       const dow = dateObj.getDay();
       const iso = toISO(dateObj);
-      const closed = dow === 1 || dow === 2 || !!findSpecialHoliday(iso);
+      const isWorkingException = workingExceptions.includes(iso);
+      const closed = !isWorkingException && (dow === 1 || dow === 2 || !!findSpecialHoliday(iso));
       cells += '<div class="holiday-day' + (closed ? ' closed' : '') + '">' + d + '</div>';
     }
     return '<div class="holiday-month"><h4>' + year + '年 ' + monthNames[month] + '</h4>' +
@@ -1273,6 +1306,15 @@
       return '<li>' + period + ' <span class="holiday-note-label">' + h.label + '</span></li>';
     }).join('');
   document.getElementById('holidayNotes').innerHTML = notesHTML;
+
+  // 表示中の2か月に重なる「特別営業日」だけを一覧表示
+  const workingNotesHTML = groupConsecutiveDates(workingExceptions)
+    .filter(g => g.start <= rangeEnd && g.end >= rangeStart)
+    .map(g => {
+      const period = g.start === g.end ? formatJP(g.start) : formatJP(g.start) + '〜' + formatJP(g.end);
+      return '<li>' + period + ' <span class="holiday-note-label">営業</span></li>';
+    }).join('');
+  document.getElementById('holidayWorkingNotes').innerHTML = workingNotesHTML;
 
   // ハンバーガーメニュー
   function toggleNav() {
